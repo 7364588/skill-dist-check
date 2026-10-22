@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-dist-check"
+version = "0.1.0"
+description = "Verify the files that ship in an agent skill, before and after installation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["markdown-it-py>=4.2,<5"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.scripts]
+skill-dist-check = "skill_dist_check.cli:main"
+
+[project.urls]
+Repository = "https://github.com/7364588/skill-dist-check"
+Issues = "https://github.com/7364588/skill-dist-check/issues"
+Demo = "https://7364588.github.io/skill-dist-check/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+skill_dist_check = ["py.typed", "report.html"]

@@ -1,0 +1,104 @@
+{
+  "schema": "skill-dist-check/report-v1",
+  "operation": "verify",
+  "status": "fail",
+  "demo": true,
+  "manifest": {
+    "format": "skill-dist-check/v1",
+    "files": [
+      {
+        "path": "SKILL.md",
+        "size": 517,
+        "sha256": "15f5243118238602d7711300041c22d32b02da9216f5d3f65ab70e427c9d861e"
+      },
+      {
+        "path": "references/format.md",
+        "size": 209,
+        "sha256": "029d43708928a29c373284f16af7105f7718b7b7686c0f5f02940d14903d4df8"
+      },
+      {
+        "path": "scripts/headings.py",
+        "size": 410,
+        "sha256": "67aba9009f1d7f3423e2d5ece11456db6f1ef016171eda5baacc874ca32cfe4c"
+      }
+    ],
+    "payload_sha256": "4a8dad1f941c6d11f0395ab5a742438aeae4f8777c4202f18eca067aac8f90e1"
+  },
+  "audit": {
+    "ok": true,
+    "findings": [
+      {
+        "severity": "info",
+        "code": "frontmatter-not-checked",
+        "path": "SKILL.md",
+        "line": 1,
+        "message": "Leading frontmatter was excluded; metadata semantics are not validated.",
+        "target": null
+      }
+    ],
+    "stats": {
+      "files": 3,
+      "markdown_files": 2,
+      "local_links": 3
+    },
+    "scope": [
+      "Scans UTF-8 .md and .markdown files, including root SKILL.md, with the CommonMark parser.",
+      "Checks recognized inline and reference links and images; fenced code, inline code, prose paths, and unused or undefined reference definitions are not path coverage.",
+      "Local URI paths are decoded once, resolved case-sensitively from the containing file, and checked only against this payload; nested percent encoding and backslashes are rejected.",
+      "Directory targets require payload descendants; an empty URI path refers to the containing file. Query strings and fragment identifiers are not validated.",
+      "Explicit HTTP(S), mailto, data, and fragment-only targets are excluded; no remote resource or anchor is checked. Other schemes are reported as unsupported.",
+      "A complete leading --- frontmatter block is skipped. HTML reference attributes are reported as uninspected; HTML, metadata semantics, scripts, and generated paths are not evaluated.",
+      "Findings omit source excerpts and raw destinations. A target is included only when it identifies an existing payload file or directory.",
+      "ok means no reported errors in this scope; it is not a security verdict or complete skill-specification validation."
+    ]
+  },
+  "installed_audit": {
+    "ok": false,
+    "findings": [
+      {
+        "severity": "info",
+        "code": "frontmatter-not-checked",
+        "path": "SKILL.md",
+        "line": 1,
+        "message": "Leading frontmatter was excluded; metadata semantics are not validated.",
+        "target": null
+      },
+      {
+        "severity": "error",
+        "code": "missing-local-target",
+        "path": "SKILL.md",
+        "line": 9,
+        "message": "The local reference has no matching payload file or directory.",
+        "target": null
+      }
+    ],
+    "stats": {
+      "files": 3,
+      "markdown_files": 1,
+      "local_links": 2
+    },
+    "scope": [
+      "Scans UTF-8 .md and .markdown files, including root SKILL.md, with the CommonMark parser.",
+      "Checks recognized inline and reference links and images; fenced code, inline code, prose paths, and unused or undefined reference definitions are not path coverage.",
+      "Local URI paths are decoded once, resolved case-sensitively from the containing file, and checked only against this payload; nested percent encoding and backslashes are rejected.",
+      "Directory targets require payload descendants; an empty URI path refers to the containing file. Query strings and fragment identifiers are not validated.",
+      "Explicit HTTP(S), mailto, data, and fragment-only targets are excluded; no remote resource or anchor is checked. Other schemes are reported as unsupported.",
+      "A complete leading --- frontmatter block is skipped. HTML reference attributes are reported as uninspected; HTML, metadata semantics, scripts, and generated paths are not evaluated.",
+      "Findings omit source excerpts and raw destinations. A target is included only when it identifies an existing payload file or directory.",
+      "ok means no reported errors in this scope; it is not a security verdict or complete skill-specification validation."
+    ]
+  },
+  "diff": {
+    "added": [
+      "notes.txt"
+    ],
+    "removed": [
+      "references/format.md"
+    ],
+    "changed": [
+      "SKILL.md"
+    ],
+    "unchanged": 1,
+    "clean": false
+  }
+}
